@@ -10,12 +10,7 @@ Over the course of Friday evening, a weekend meeting, and Monday morning our tea
 - Create a repo on github
 - Set up (npm init, dotenv, express, mongoose, cors)
 - Configurations (.env, .gitignore, server.js, connections.js)
-- server.js with app.use middleware
-- /models folder with schema and model
-- /controllers folder with controllers
-- Test all routes with Postman
-- Deploy back end
-
+- server.js with app.use https://git.generalassemb.ly/seir-110/MERN-lab
 ### Workflow for Frontend
 - Create app with create-react-app
 - Create a repo on github
@@ -105,7 +100,7 @@ Over the course of Friday evening, a weekend meeting, and Monday morning our tea
 | Header | H | 0.5hr | hr|
 | HomePage.js | H | 2.5hrs|  hr |
 | Cart.js | H | 2.5hrs|  hr |
-| Team Page | H | 1.5hrs|  hr |
+| Team Page | H | 1.5hrs|  hrhttps://git.generalassemb.ly/seir-110/MERN-lab |
 | Footer | H | 0.5hrs|  hr |
 | Total | N/A | 23hrs|  hr |
 
@@ -119,6 +114,12 @@ Over the course of Friday evening, a weekend meeting, and Monday morning our tea
 | Contact Modal | L | 2.5hr | hr |
 | Total | N/A | 12hrs|  hr |
 
+
+## Technologies
+- Backend
+  - Mongoose, MongoDB, Express, Postman
+- Frontend
+  - React, React-Router, Axios, CORS, dotenv
 
 ## Problems and Hurdles
  
