@@ -122,4 +122,3 @@ Over the course of Friday evening, a weekend meeting, and Monday morning our tea
   - React, React-Router, Axios, CORS, dotenv
 
 ## Problems and Hurdles
- 
