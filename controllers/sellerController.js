@@ -39,4 +39,13 @@ router.put('/:id', async (req, res) => {
     })
   })
 
+
+router.patch('/:id', async (req, res) => {
+    const seller = await Seller.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    res.json({
+      status: 200,
+      msg: `Seller: ${seller} was updated in the database`
+    })
+  })
+
 module.exports = router;
