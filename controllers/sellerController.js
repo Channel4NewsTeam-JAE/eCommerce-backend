@@ -23,7 +23,6 @@ router.post("/", async (req, res) => {
 
 //delete seller
 
-//delete user
 router.delete('/:id', async (req, res) => {
     const sellerDeleted = await Seller.findByIdAndDelete(req.params.id)
     res.json({
@@ -32,13 +31,6 @@ router.delete('/:id', async (req, res) => {
     })
 })
 
-//update product
-// router.put('/:id', async (req, res) => {
-//     const user = await User.findByIdAndUpdate(req.params.id, req.body, {new: true})
-//     res.json({
-//       status: 200,
-//       msg: `Seller: ${user} was updated in the database`
-//     })
-//   })
+
 
 module.exports = router;
