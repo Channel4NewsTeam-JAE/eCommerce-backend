@@ -9,10 +9,7 @@ const app = express()
 // app.use(logger('dev'));
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
-app.use(cors({
-    origin: `http://localhost:3001`,  //react's address
-    credentials: true
-}));
+app.use(cors());
 
 const productController = require('./controllers/productController')
 app.use('/products', productController)
