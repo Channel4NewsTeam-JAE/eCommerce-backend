@@ -1,6 +1,7 @@
 const express = require('express');
-const Product = require('./../models/Product.js');
+const Product = require('./../models/Product');
 const router = express.Router();
+
 
 //get route
 router.get("/", async (req, res) => {
@@ -11,18 +12,6 @@ router.get("/", async (req, res) => {
     });
   });
 
-
-// create product
-
-router.post("/", async (req, res) => {
-  const data = req.body;
-  const newProduct = await Product.create(data);
-  res.json({
-    status: 200,
-    data: newProduct,
-  });
-});
-
 //delete
 router.delete('/:id', async (req, res) => {
     const product = await Product.findByIdAndDelete(req.params.id)
@@ -32,12 +21,24 @@ router.delete('/:id', async (req, res) => {
     })
   })
 
-//update product
+// post
+router.post("/", async (req, res) => {
+  const data = req.body;
+  console.log("DATA: ", data)
+  const product = await Product.create(data);
+  res.json({
+    status: 200,
+    data: product,
+  });
+  console.log(product)
+});
+
 router.put('/:id', async (req, res) => {
-    const user = await User.findByIdAndUpdate(req.params.id, req.body, {new: true})
-    res.json({
-      status: 200,
-      msg: `Update: ${product}} was updated in the database`
-    })
+  const product = await Product.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  res.json({
+    status: 200,
+    msg: `Product: ${product} was updated in the database`
   })
+})
+
 module.exports = router;
