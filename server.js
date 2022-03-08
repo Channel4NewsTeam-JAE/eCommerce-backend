@@ -11,6 +11,9 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(cors())
 
+app.use(express.json())
+
+app.use(express.urlencoded({extended:false}));
 
 const productController = require('./controllers/productController')
 app.use('/products', productController)
@@ -19,6 +22,7 @@ const purchaseController = require('./controllers/purchaseController')
 app.use('/purchases', purchaseController)
 
 const sellerController = require('./controllers/sellerController')
+const { urlencoded } = require('express')
 app.use('/sellers', sellerController)
 
 
