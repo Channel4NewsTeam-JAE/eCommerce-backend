@@ -7,7 +7,10 @@ const PORT = process.env.PORT
 
 const app = express()
 // app.use(logger('dev'));
+app.use(express.json())
+app.use(express.urlencoded({extended:false}))
 app.use(cors())
+
 
 const productController = require('./controllers/productController')
 app.use('/products', productController)
