@@ -4,7 +4,7 @@ const sellerSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   email: String,
-  products: {type: Schema.Types.ObjectId, ref:'Product'}
+  products: {type: mongoose.Schema.Types.ObjectId, ref:'Product'}
     
 })
 
