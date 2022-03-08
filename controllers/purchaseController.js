@@ -1,5 +1,5 @@
 const express = require('express');
-const Purchase = require('../models/Purchase');
+const Purchase = require('./../models/Purchase');
 const router = express.Router();
 
 //get purchase history
