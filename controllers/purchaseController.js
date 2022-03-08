@@ -19,7 +19,7 @@ router.delete('/:id', async (req, res) => {
     })
   })
 
-  router.post("/", async (req, res) => {
+router.post("/", async (req, res) => {
     const data = req.body;
     console.log("DATA: ", data)
     const product = await Product.create(data);
@@ -30,5 +30,11 @@ router.delete('/:id', async (req, res) => {
     console.log(product)
   });
 
-
+router.put('/:id', async (req, res) => {
+    const purchase = await Purchase.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    res.json({
+      status: 200,
+      msg: `Purchase: ${purchase} was updated in the database`
+    })
+  })
 module.exports = router;
