@@ -37,4 +37,14 @@ router.put('/:id', async (req, res) => {
       msg: `Purchase: ${purchase} was updated in the database`
     })
   })
+
+  router.patch('/:id', async (req, res) => {
+    const purchase = await Purchase.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    res.json({
+      status: 200,
+      msg: `Purchase: ${purchase} was updated in the database`
+    })
+  })
+
+
 module.exports = router;
