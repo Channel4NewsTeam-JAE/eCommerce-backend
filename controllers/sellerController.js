@@ -1,5 +1,5 @@
 const express = require('express');
-const Seller = require('../models/Seller');
+const Seller = require('./sellerController');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
