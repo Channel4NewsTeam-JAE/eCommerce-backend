@@ -22,12 +22,12 @@ router.delete('/:id', async (req, res) => {
 router.post("/", async (req, res) => {
     const data = req.body;
     console.log("DATA: ", data)
-    const product = await Product.create(data);
+    const purchase = await Purchase.create(data);
     res.json({
       status: 200,
-      data: product,
+      data: purchase,
     });
-    console.log(product)
+    console.log(purchase)
   });
 
 router.put('/:id', async (req, res) => {
