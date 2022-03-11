@@ -4,13 +4,19 @@ const router = express.Router();
 
 //get purchase history
 router.get('/', async (req, res) => {
-    const purchaseHistory = await Purchase.find({});
+    const purchaseHistory = await Purchase.find({}).populate('products');
     res.json({
         status: 200,
         data: purchaseHistory,
     })
 })
-
+router.delete('/', async(req,res)=>{
+  await Purchase.deleteMany({});
+  res.json({
+    status: 200,
+    msg: 'deleted all items'
+  })
+})
 router.delete('/:id', async (req, res) => {
     const purchase = await Purchase.findByIdAndDelete(req.params.id)
     res.json({
