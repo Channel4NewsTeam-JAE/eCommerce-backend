@@ -12,6 +12,13 @@ router.get("/", async (req, res) => {
     });
   });
 
+router.get('/search/:category', async (req,res)=> {
+  const products = await Product.find({category: req.params.category})
+  res.json({
+    status: 200,
+    data: products
+  })
+})
 //delete
 router.delete('/:id', async (req, res) => {
     const product = await Product.findByIdAndDelete(req.params.id)
